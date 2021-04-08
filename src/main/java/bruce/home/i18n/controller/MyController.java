@@ -13,8 +13,8 @@ public class MyController {
     private MessageSource messageSource;
 
     @GetMapping(value = {"/test"})
-    public void test() {
+    public String test() {
         System.out.println(LocaleContextHolder.getLocale());
-        System.out.println(messageSource.getMessage("language.name", null, LocaleContextHolder.getLocale()));
+        return messageSource.getMessage("language.name", null, LocaleContextHolder.getLocale());
     }
 }
